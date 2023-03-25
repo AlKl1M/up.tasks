@@ -16,15 +16,15 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 </div>
 
 <div class="columns is-flex-wrap-wrap  ">
-
+		<?php foreach($arResult['TASKS'] as $tasks): ?>
 		<div class="task-card column is-4">
 			<div class="card">
 				<header class="card-header">
-					<a class="card-header-title" href="/task/id/">
-						Название
+					<a class="card-header-title">
+						<?= $tasks['TITLE']; ?>
 					</a>
-					<a class="card-header-icon" aria-label="more options"  href="/delete/id/" onclick="return confirm('Do you want delete this task?')">
-						<input type="hidden" name="ID" value="ID">
+					<a class="card-header-icon" aria-label="more options"  href="/delete/<?= $tasks['ID']; ?>/" onclick="return confirm('Вы правда хотите удалить задачу?')">
+						<input type="hidden" name="ID" value="<?= $tasks['TITLE']; ?>">
 						<span class="icon disabled">
 						✖️
 					</span>
@@ -32,20 +32,17 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				</header>
 				<div class="card-content">
 					<div class="content">
-						Описание
+						<?= $tasks['DESCRIPTION']; ?>
 					</div>
 				</div>
 				<div class="card-content">
 					<div class="content">
-						Дедлайн
+						<?= $tasks['DATE_DEADLINE']; ?>
 					</div>
 				</div>
-				<footer class="card-footer">
-
-				</footer>
 			</div>
 		</div>
-
+	<?php endforeach; ?>
 </div>
 <form name="Create Task" action="" method="post">
 	<div class="modal" id="modal-js-example" >
@@ -103,8 +100,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				</div>
 			</section>
 			<footer class="modal-card-foot">
-				<button class="button is-success" type="submit">Create task</button>
-				<button class="button" type="reset" >Cancel</button>
+				<button class="button is-success" type="submit">Создать задачу</button>
+				<button class="button" type="reset" >Отменить</button>
 			</footer>
 		</div>
 	</div>

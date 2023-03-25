@@ -2,6 +2,10 @@
 	height: 100px;
 }
 
+.card {
+	background: #e0e0e0;
+}
+
 .card-header {
 	height: 50px;
 }
