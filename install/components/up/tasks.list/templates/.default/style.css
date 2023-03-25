@@ -1,0 +1,23 @@
+.card-content {
+	height: 100px;
+}
+
+.card-header {
+	height: 50px;
+}
+
+.task-card.Low {
+	background: green;
+}
+
+.task-card.Normal {
+	background: yellow;
+}
+
+.task-card.High {
+	background: red;
+}
+
+.task-card.Completed {
+	background: grey;
+}
