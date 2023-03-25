@@ -24,7 +24,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 						<?= $tasks['TITLE']; ?>
 					</a>
 					<a class="card-header-icon" aria-label="more options"  href="/delete/<?= $tasks['ID']; ?>/" onclick="return confirm('Вы правда хотите удалить задачу?')">
-						<input type="hidden" name="ID" value="<?= $tasks['TITLE']; ?>">
+						<input type="hidden" name="ID" value="<?= $tasks['ID']; ?>">
 						<span class="icon disabled">
 						✖️
 					</span>
