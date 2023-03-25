@@ -16,10 +16,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 </div>
 
 <div class="columns is-flex-wrap-wrap  ">
-		<?php foreach($arResult['TASKS'] as $tasks): ?>
+	<?php foreach($arResult['TASKS'] as $tasks): ?>
 		<div class="task-card column is-4">
 			<div class="card">
-				<header class="card-header">
+				<header class="card-header <?= $tasks['PRIORITY']?>">
 					<a class="card-header-title">
 						<?= $tasks['TITLE']; ?>
 					</a>
@@ -37,7 +37,10 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				</div>
 				<div class="card-content">
 					<div class="content">
-						<?= $tasks['DATE_DEADLINE']; ?>
+						Дата создания: <?= $tasks['DATE_CREATION']->format($arResult['DATE_FORMAT']); ?>
+					</div>
+					<div class="content">
+						Дедлайн: <?= $tasks['DATE_DEADLINE']->format($arResult['DATE_FORMAT']); ?>
 					</div>
 				</div>
 			</div>
@@ -49,21 +52,21 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 		<div class="modal-background"></div>
 		<div class="modal-card">
 			<header class="modal-card-head">
-				<p class="modal-card-title">Create new task</p>
+				<p class="modal-card-title">Создать новую задачу</p>
 				<button class="delete" type="reset" aria-label="close"></button>
 			</header>
 
 			<section class="modal-card-body">
 				<div class="field">
-					<label class="label">Название</label>
+					<label class="label">Название (24 сим.)</label>
 					<div class="control">
-						<input name="title" class="input is-primary mb-4 is-large" type="text" placeholder="Task title">
+						<input name="title" class="input is-primary mb-4 is-large" type="text" placeholder="Task title" maxlength="24">
 					</div>
 				</div>
 				<div class="field">
-					<label class="label">Описание</label>
+					<label class="label">Описание (40 сим.)</label>
 					<div class="control">
-						<input name="description" class="input is-primary mb-4 " type="text" placeholder="Task description">
+						<input name="description" class="input is-primary mb-4 " type="text" placeholder="Task description" maxlength="40">
 					</div>
 				</div>
 				<div class="columns" style="margin-bottom:0px">

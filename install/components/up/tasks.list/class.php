@@ -11,7 +11,7 @@ class TasksListComponent extends CBitrixComponent
 
 	public function onPrepareComponentParams($arParams)
 	{
-		$arParams['DATE_FORMAT'] = $arParams['DATE_FORMAT'] ?? 'd.m.Y';
+		$arParams['DATE_FORMAT'] = 'd.m.Y';
 
 		return $arParams;
 	}

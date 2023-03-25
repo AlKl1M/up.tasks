@@ -23,7 +23,7 @@
 		<nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
 			<div class="navbar-brand">
 				<a class="navbar-item has-text-weight-semibold is-size-4 logo" href="/">
-					<span>🔥</span> Tasks
+					<span>📃</span> Tasks
 				</a>
 
 				<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -34,15 +34,6 @@
 			</div>
 
 			<div id="navbarBasicExample" class="navbar-menu">
-				<div class="navbar-start">
-					<a class="navbar-item">
-						Home
-					</a>
-
-					<a class="navbar-item" href="/documentation/">
-						Documentation
-					</a>
-				</div>
 
 				<div class="navbar-end">
 

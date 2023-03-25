@@ -2,6 +2,10 @@
 	height: 100px;
 }
 
+.card-header-title{
+	font-size: 24px;
+}
+
 .card {
 	background: #e0e0e0;
 }
@@ -10,15 +14,15 @@
 	height: 50px;
 }
 
-.task-card.Low {
+.card-header.low {
 	background: green;
 }
 
-.task-card.Normal {
+.card-header.normal {
 	background: yellow;
 }
 
-.task-card.High {
+.card-header.high {
 	background: red;
 }
 
