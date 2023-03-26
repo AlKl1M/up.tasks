@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS up_tasks_task
 	DESCRIPTION VARCHAR(255),
 	DATE_CREATION datetime not null,
 	DATE_DEADLINE datetime,
-	STATUS VARCHAR(255) not null default 'new',
 	PRIORITY VARCHAR(255) not null default 'normal',
 	PRIMARY KEY (ID)
 );

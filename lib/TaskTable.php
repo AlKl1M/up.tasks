@@ -84,14 +84,6 @@ class TaskTable extends DataManager
 				]
 			),
 			new StringField(
-				'STATUS',
-				[
-					'default' => 'new',
-					'validation' => [__CLASS__, 'validateStatus'],
-					'title' => Loc::getMessage('TASK_ENTITY_STATUS_FIELD')
-				]
-			),
-			new StringField(
 				'PRIORITY',
 				[
 					'default' => 'normal',

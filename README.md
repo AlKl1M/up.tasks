@@ -8,11 +8,11 @@ Set `Projector template` as your primary site template
 
 ## Setup modern Bitrix routing
 
-Add `projector.php` in `routing` section of `${doc_root}/bitrix/.settings.php` file:
+Add `tasks.php` in `routing` section of `${doc_root}/bitrix/.settings.php` file:
 
 ```php
 'routing' => ['value' => [
-	'config' => ['projector.php']
+	'config' => ['tasks.php']
 ]],
 ```
 
@@ -38,7 +38,7 @@ Replace following lines in your `${doc_root}/.htaccess` file:
 You probably want to make following symlinks:
 
 ```
-local/components/up -> local/modules/up.projector/install/components/up
-local/templates/projector -> local/modules/up.projector/install/templates/projector
-local/routes/projector.php -> local/modules/up.projector/install/routes/projector.php
+local/components/up -> local/modules/up.tasks/install/components/up
+local/templates/projector -> local/modules/up.tasks/install/templates/projector
+local/routes/projector.php -> local/modules/up.tasks/install/routes/projector.php
 ```

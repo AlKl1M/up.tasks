@@ -6,7 +6,7 @@ use Bitrix\Main\Config\Option;
 function __projectorMigrate(int $nextVersion, callable $callback)
 {
 	global $DB;
-	$moduleId = 'up.projector';
+	$moduleId = 'up.tasks';
 
 	if (!ModuleManager::isModuleInstalled($moduleId))
 	{
@@ -37,7 +37,6 @@ __projectorMigrate(2, function($updater, $DB)
 	DESCRIPTION VARCHAR(255),
 	DATE_CREATION datetime not null,
 	DATE_DEADLINE datetime,
-	STATUS VARCHAR(255) not null default 'new',
 	PRIORITY VARCHAR(255) not null default 'normal',
 	PRIMARY KEY (ID)
 );");

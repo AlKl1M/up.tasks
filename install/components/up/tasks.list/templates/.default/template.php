@@ -60,13 +60,13 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				<div class="field">
 					<label class="label">Название (24 сим.)</label>
 					<div class="control">
-						<input name="title" class="input is-primary mb-4 is-large" type="text" placeholder="Task title" maxlength="24">
+						<input name="title" class="input is-primary mb-4 is-large" type="text" placeholder="Название задачи" maxlength="24">
 					</div>
 				</div>
 				<div class="field">
 					<label class="label">Описание (40 сим.)</label>
 					<div class="control">
-						<input name="description" class="input is-primary mb-4 " type="text" placeholder="Task description" maxlength="40">
+						<input name="description" class="input is-primary mb-4 " type="text" placeholder="Описание задачи" maxlength="40">
 					</div>
 				</div>
 				<div class="columns" style="margin-bottom:0px">
