@@ -19,12 +19,12 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 	<?php foreach($arResult['TASKS'] as $tasks): ?>
 		<div class="task-card column is-4">
 			<div class="card">
-				<header class="card-header <?= $tasks['PRIORITY']?>">
+				<header class="card-header <?= htmlspecialcharsbx($tasks['PRIORITY'])?>">
 					<a class="card-header-title">
-						<?= $tasks['TITLE']; ?>
+						<?= htmlspecialcharsbx($tasks['TITLE']); ?>
 					</a>
-					<a class="card-header-icon" aria-label="more options"  href="/delete/<?= $tasks['ID']; ?>/" onclick="return confirm('Вы правда хотите удалить задачу?')">
-						<input type="hidden" name="ID" value="<?= $tasks['ID']; ?>">
+					<a class="card-header-icon" aria-label="more options"  href="/delete/<?= htmlspecialcharsbx($tasks['ID']); ?>/" onclick="return confirm('Вы правда хотите удалить задачу?')">
+						<input type="hidden" name="ID" value="<?= htmlspecialcharsbx($tasks['ID']); ?>">
 						<span class="icon disabled">
 						✖️
 					</span>
@@ -32,15 +32,15 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				</header>
 				<div class="card-content">
 					<div class="content">
-						<?= $tasks['DESCRIPTION']; ?>
+						<?= htmlspecialcharsbx($tasks['DESCRIPTION']); ?>
 					</div>
 				</div>
 				<div class="card-content">
 					<div class="content">
-						Дата создания: <?= $tasks['DATE_CREATION']->format($arResult['DATE_FORMAT']); ?>
+						Дата создания: <?= htmlspecialcharsbx($tasks['DATE_CREATION']->format($arResult['DATE_FORMAT'])); ?>
 					</div>
 					<div class="content">
-						Дедлайн: <?= $tasks['DATE_DEADLINE']->format($arResult['DATE_FORMAT']); ?>
+						Дедлайн: <?= htmlspecialcharsbx($tasks['DATE_DEADLINE']->format($arResult['DATE_FORMAT'])); ?>
 					</div>
 				</div>
 			</div>
@@ -48,6 +48,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 	<?php endforeach; ?>
 </div>
 <form name="Create Task" action="" method="post">
+	<?=bitrix_sessid_post()?>
 	<div class="modal" id="modal-js-example" >
 		<div class="modal-background"></div>
 		<div class="modal-card">

@@ -16,14 +16,14 @@ class Task
 		\Up\Tasks\TaskTable::delete($id);
 	}
 
-	public static function createTask($arg)
+	public static function createTask($taskName, $taskDesc, $taskDeadline, $taskPriority)
 	{
 		return \Up\Tasks\TaskTable::createObject()
-			->setTitle($arg['title'])
-			->setDescription($arg['description'] ?: '')
+			->setTitle($taskName)
+			->setDescription($taskDesc ?: '')
 			->setDateCreation(new \Bitrix\Main\Type\DateTime())
-			->setDateDeadline(((new \Bitrix\Main\Type\DateTime($arg['deadline'], 'Y-m-d'))) ?: '')
-			->setPriority($arg['priority'])
+			->setDateDeadline(\Bitrix\Main\Type\DateTime::tryParse($taskDeadline, 'Y-m-d') ?? (new \Bitrix\Main\Type\DateTime()))
+			->setPriority($taskPriority)
 			->save();
 	}
 }
