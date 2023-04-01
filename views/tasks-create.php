@@ -14,8 +14,8 @@ $taskPriority = \Bitrix\Main\Context::getCurrent()->getRequest()->getPost('prior
 if (strlen($taskName) > 24) {
 	$taskName = substr($taskName, 0, 21) . "...";
 }
-if (strlen($taskName) > 40) {
-	$taskDesc = substr($taskDesc, 0, 37) . "...";
+if (strlen($taskDesc) > 36) {
+	$taskDesc = substr($taskDesc, 0, 33) . "...";
 }
 
 if (check_bitrix_sessid())
