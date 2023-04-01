@@ -15,7 +15,7 @@ if (strlen($taskName) > 24) {
 	$taskName = substr($taskName, 0, 21) . "...";
 }
 if (strlen($taskName) > 40) {
-	$taskDesc = substr($taskName, 0, 37) . "...";
+	$taskDesc = substr($taskDesc, 0, 37) . "...";
 }
 
 if (check_bitrix_sessid())
